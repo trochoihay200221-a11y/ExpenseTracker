@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expense Tracker</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💰 Personal Expense Tracker</h1>
+
+<div class="card">
+
+<h2>Add Expense</h2>
+
+<input type="number" id="amount" placeholder="Amount">
+
+<select id="category">
+<option>Food</option>
+<option>Transport</option>
+<option>Shopping</option>
+<option>Entertainment</option>
+<option>Bills</option>
+<option>Others</option>
+</select>
+
+<input type="date" id="date">
+
+<input
+type="text"
+id="note"
+placeholder="Short Note">
+
+<button onclick="addExpense()">Add Expense</button>
+
+</div>
+
+<div class="card">
+
+<h2>Budget</h2>
+
+<input type="number"
+id="budget"
+placeholder="Monthly Budget">
+
+<button onclick="saveBudget()">
+Save Budget
+</button>
+
+<p id="budgetWarning"></p>
+
+</div>
+
+<div class="summary">
+
+<div class="box">
+<h3>Total Spending</h3>
+<p id="total">$0</p>
+</div>
+
+<div class="box">
+<h3>Total Expenses</h3>
+<p id="count">0</p>
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button onclick="exportCSV()">
+Export CSV
+</button>
+
+<button onclick="exportPDF()">
+Export PDF
+</button>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Amount</th>
+
+<th>Category</th>
+
+<th>Date</th>
+
+<th>Note</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="expenseTable">
+
+</tbody>
+
+</table>
+
+<div class="chart">
+
+<canvas id="pieChart"></canvas>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
